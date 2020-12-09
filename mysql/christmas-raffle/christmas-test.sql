@@ -135,7 +135,7 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_520_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -177,7 +177,7 @@ DELIMITER ;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
 /*!50001 SET character_set_client      = utf8mb4 */;
 /*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_520_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vw_rafflewinners` AS select `e`.`employee_id` AS `employee_code`,`e`.`full_name` AS `full_name`,`e`.`position` AS `position`,`e`.`department_desc` AS `department_desc`,`r`.`id` AS `raffle_id`,`r`.`name` AS `raffle_name`,`r`.`price` AS `raffle_price`,`r`.`expected_winners` AS `expected_winners` from ((`raffles` `r` join `raffle_winners` `rw` on((`rw`.`raffle_id` = `r`.`id`))) join `employees` `e` on((`e`.`id` = `rw`.`employee_id`))) */;
