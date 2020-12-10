@@ -99,7 +99,7 @@ CREATE TABLE `raffles` (
 
 LOCK TABLES `raffles` WRITE;
 /*!40000 ALTER TABLE `raffles` DISABLE KEYS */;
-INSERT INTO `raffles` VALUES (1,'Winners of Php. 500','500','200','2020-12-04 22:06:10',1),(2,'Winners of Php. 1000','1000','150','2020-12-04 22:06:10',1),(3,'Winners of Php. 2000','2000','100','2020-12-04 22:06:10',1),(4,'Winners of Php. 3000','3000','50','2020-12-04 22:06:10',1);
+INSERT INTO `raffles` VALUES (1,'Raffle for Php. 500','500','200','2020-12-04 22:06:10',1),(2,'Raffle for Php. 1000','1000','150','2020-12-04 22:06:10',1),(3,'Raffle for Php. 2000','2000','100','2020-12-04 22:06:10',1),(4,'Raffle for Php. 3000','3000','50','2020-12-04 22:06:10',1);
 /*!40000 ALTER TABLE `raffles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,4 +259,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-09 21:01:05
+-- Dump completed on 2020-12-10 13:58:59
