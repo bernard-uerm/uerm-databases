@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `christmas_raffle` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `christmas_raffle` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci */;
 USE `christmas_raffle`;
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: christmas_raffle
+-- Host: 127.0.0.1    Database: christmas_raffle
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	5.5.5-10.1.36-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,17 +23,17 @@ USE `christmas_raffle`;
 
 DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employees` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `employee_id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `first_name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `middle_name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `last_name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `name_extension` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `department` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `position` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `category` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `first_name` varchar(150) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `middle_name` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `last_name` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `name_extension` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `department` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `position` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `category` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `enabled` tinyint(1) DEFAULT '1',
   `created_datetime` datetime DEFAULT CURRENT_TIMESTAMP,
   `winner` tinyint(1) DEFAULT '0',
@@ -56,11 +56,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `raffle_winners`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `raffle_winners` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `employee_id` int DEFAULT NULL,
-  `raffle_id` int DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(11) DEFAULT NULL,
+  `raffle_id` int(11) DEFAULT NULL,
   `create_datetime` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -81,12 +81,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `raffles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `raffles` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `price` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `expected_winners` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `price` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `expected_winners` varchar(45) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `created_datetime` datetime DEFAULT CURRENT_TIMESTAMP,
   `enabled` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -99,7 +99,7 @@ CREATE TABLE `raffles` (
 
 LOCK TABLES `raffles` WRITE;
 /*!40000 ALTER TABLE `raffles` DISABLE KEYS */;
-INSERT INTO `raffles` VALUES (1,'Raffle for Php. 500','500','200','2020-12-04 22:06:10',1),(2,'Raffle for Php. 1000','1000','150','2020-12-04 22:06:10',1),(3,'Raffle for Php. 2000','2000','100','2020-12-04 22:06:10',1),(4,'Raffle for Php. 3000','3000','50','2020-12-04 22:06:10',1);
+INSERT INTO `raffles` VALUES (1,'Raffle for Php. 500','500','200','2020-12-04 22:06:10',1),(2,'Raffle for Php. 1,000','1,000','150','2020-12-04 22:06:10',1),(3,'Raffle for Php. 2,000','2,000','100','2020-12-04 22:06:10',1),(4,'Raffle for Php. 3,000','3,000','50','2020-12-04 22:06:10',1);
 /*!40000 ALTER TABLE `raffles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +110,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `vw_rafflewinners`;
 /*!50001 DROP VIEW IF EXISTS `vw_rafflewinners`*/;
 SET @saved_cs_client     = @@character_set_client;
-/*!50503 SET character_set_client = utf8mb4 */;
+SET character_set_client = utf8;
 /*!50001 CREATE VIEW `vw_rafflewinners` AS SELECT 
  1 AS `employee_code`,
  1 AS `full_name`,
@@ -178,7 +178,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_520_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -242,7 +242,7 @@ DELIMITER ;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
 /*!50001 SET character_set_client      = utf8mb4 */;
 /*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_520_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `vw_rafflewinners` AS select `e`.`employee_id` AS `employee_code`,concat(`e`.`first_name`,' ',`e`.`last_name`) AS `full_name`,`e`.`name_extension` AS `name_extension`,`e`.`position` AS `position`,`e`.`department` AS `department`,`e`.`category` AS `category`,`r`.`id` AS `raffle_id`,`r`.`name` AS `raffle_name`,`r`.`price` AS `raffle_price`,`r`.`expected_winners` AS `expected_winners` from ((`raffles` `r` join `raffle_winners` `rw` on((`rw`.`raffle_id` = `r`.`id`))) join `employees` `e` on((`e`.`id` = `rw`.`employee_id`))) */;
@@ -259,4 +259,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-10 13:58:59
+-- Dump completed on 2020-12-11 16:21:54
